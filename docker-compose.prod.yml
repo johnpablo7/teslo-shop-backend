@@ -4,11 +4,9 @@ services:
   app:
     build:
       context: .
-      target: ${STAGE}
+      target: prod
       dockerfile: Dockerfile
-    volumes:
-      - .:/app/
-      - /app/node_modules
+    image: john1987/teslo-shop-backend:1.0.0
     container_name: nest-app
     ports:
       - ${PORT}:${PORT}
